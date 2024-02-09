@@ -3,16 +3,18 @@ import HomeContainer from "@/containers/home";
 import Movies from "@/mocks/movies.json";
 
 type Params = {
+
     params: {
         category?: number[];
+        selectedCategory: {
+            id: string,
+            movies: [];
+        };
     };
-    selectedCategory: {
-        id: string,
-        movies: []
-    }
 };
 
 const HomePage: React.FC<Params> = ({ params }) => {
+    console.log(params)
     let selectedKategori;
 
     if (params.category && params.category.length > 0) {
