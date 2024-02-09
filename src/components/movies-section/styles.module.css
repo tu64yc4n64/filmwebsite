@@ -1,0 +1,40 @@
+.moviesSection {
+  margin-top: 36px;
+}
+
+.title {
+  margin-bottom: 12px;
+  
+  font-size: 20px;
+  
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 320px;
+  gap: 24px;
+}
+
+.movie {
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.movie:hover {
+  z-index: 9;
+  transform: scale(1.25);
+}
+.movie img {
+  object-fit: cover;
+}
+@media screen and (max-width: 576px) {
+  .movies {
+  
+  grid-auto-rows: 500px;
+ 
+}
+}
