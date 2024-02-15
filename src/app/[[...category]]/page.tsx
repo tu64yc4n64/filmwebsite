@@ -6,26 +6,19 @@ type Params = {
 
     params: {
         category?: number[];
-        selectedCategory: {
-            id: string,
-            movies: [];
-        };
+
     };
 };
 
 const HomePage: React.FC<Params> = ({ params }) => {
-    console.log(params)
-    let selectedKategori;
-
-    if (params.category && params.category.length > 0) {
-        selectedKategori = true;
-    }
+    console.log(process.env.API_KEY)
+    const movies = params?.category?.length ? Movies?.results?.slice(0, 7) : []
 
     return (
         <>
             <HomeContainer selectedCategory={{
                 id: params.category?.[0] ?? 0,
-                movies: selectedKategori ? Movies.results.slice(0, 7) : []
+                movies
             }} />
         </>
     );
